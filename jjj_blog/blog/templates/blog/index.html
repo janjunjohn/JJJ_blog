@@ -1,8 +1,21 @@
 {% extends 'blog/frame.html' %}
+{% load md_x %}
 {% load static %}
 
 {% block title %}Jun's Junk Journal{% endblock title %}
-
 {% block contents %}
-<h1 class="mt-4 font-primary">Hello, world!</h1>
+<div class="container-fluid">
+    <h1 class="font-primary">Jun's Junk Journal</h1>
+    <div class="heading">
+        {% for tag in tags %}
+        <span>{{tag}}</span>
+        {% endfor %}
+        {% for post in posts %}
+        <h3>{{post.pub_date|date:"Y/m/d/D."}}</h3>
+        <h1>{{post.title}}</h1>
+    </div>
+    <div class="blog-text">{{post.content|markdown_to_html}}</div>
+    {% endfor %}
+</div>
+
 {% endblock contents %}

@@ -1,3 +1,14 @@
 body {
-    background-color: brown;
+    background-color: #fff;
+    color: #121212;
+}
+
+.heading {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.blog-text {
+    width: 50%;
+    margin: auto;
 }
