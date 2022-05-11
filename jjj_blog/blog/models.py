@@ -29,4 +29,4 @@ class Blog(models.Model):
     
     def __str__(self):
         JST_date = self.pub_date + timedelta(hours=9)
-        return f'{JST_date.date()}_{self.key}' # create & update date(JST) + key 
+        return f'{JST_date.strftime("%Y_%m_%d")}-{self.key}' # create & update date(JST) + key 
